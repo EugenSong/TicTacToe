@@ -26,7 +26,8 @@ public class Board {
         // declare char 2D array
         String[][] ticTacToeBoard;
 
-        // board dimensions = numOfPlayers + 1 ; need to + 2 to account for the coordinates
+        // board dimensions = numOfPlayers + 1 ; need to + 2 to account for the
+        // coordinates
         ticTacToeBoard = new String[numOfPlayers + 2][numOfPlayers + 2];
 
         return ticTacToeBoard;
@@ -49,20 +50,21 @@ public class Board {
                     if (row == 0 && column == 11)
                         System.out.print(ticTacToeBoard[row][column] = column - 1 + "|");
                     else
-                    // int cast to string becomes string ; prints all columns numbers besides 10
-                    System.out.print(ticTacToeBoard[row][column] = column - 1 + " |");
+                        // int cast to string becomes string ; prints all columns numbers besides 10
+                        System.out.print(ticTacToeBoard[row][column] = column - 1 + " |");
 
-                    // condition to initialize row numbers
+                // condition to initialize row numbers
                 else if (row > 0 && column == 0)
 
                     // formatting for when printing 10 (since double-digit)
                     if (row == 11 && column == 0)
                         System.out.print(ticTacToeBoard[row][column] = row - 1 + "|");
                     else
-                    // int cast to string becomes string ; prints all row numbers besides 10
-                    System.out.print(ticTacToeBoard[row][column] = row - 1 + " |");
+                        // int cast to string becomes string ; prints all row numbers besides 10
+                        System.out.print(ticTacToeBoard[row][column] = row - 1 + " |");
 
-                    // condition that accounts for the inside of grid ; prints the empty string values
+                // condition that accounts for the inside of grid ; prints the empty string
+                // values
                 else {
                     if (ticTacToeBoard[row][column] == null) {
                         ticTacToeBoard[row][column] = "  ";

@@ -24,8 +24,10 @@ public class GameLogic {
         Integer[] arr;
         int[] array;
 
-        /* create array of Integers based on numOfPlayers (wrapper class)
-         Side note: Integer wrapper class is useful when parsing from string into int */
+        /*
+         * create array of Integers based on numOfPlayers (wrapper class)
+         * Side note: Integer wrapper class is useful when parsing from string into int
+         */
         arr = new Integer[playerCount];
 
         // initialize each value in the array based on their original value
@@ -39,26 +41,27 @@ public class GameLogic {
         // shuffle entries in an array (default shuffle) using Collections library
         Collections.shuffle(myList);
 
-        // cast shuffled List to int[] array (also determines size of int[] array) using java streams
-        array = myList.stream().mapToInt(i->i).toArray();
+        // cast shuffled List to int[] array (also determines size of int[] array) using
+        // java streams
+        array = myList.stream().mapToInt(i -> i).toArray();
 
         return array;
     }
 
-
-
     // check for consecutive row win
-    public boolean checkHorizontal (String[][] ticTacToeBoard, char piece, int columnRowSize, int conditionToWin) {
+    public boolean checkHorizontal(String[][] ticTacToeBoard, char piece, int columnRowSize, int conditionToWin) {
 
         boolean isAWin = false;
         int counter = 0;
 
         // iterates through each row of the board starting at row 1
         for (int eachRow = 1; eachRow < columnRowSize + 1; eachRow++) {
-            // columnRowSize is = (playerCount + 1) then add another 1 so that it accounts for the entire # of rows
+            // columnRowSize is = (playerCount + 1) then add another 1 so that it accounts
+            // for the entire # of rows
 
-            // iterate through columns until conditionToWin away from the end so that it does not check over in the while loop
-            for (int eachColumn = 1; eachColumn < columnRowSize - 1; eachColumn++ ) {
+            // iterate through columns until conditionToWin away from the end so that it
+            // does not check over in the while loop
+            for (int eachColumn = 1; eachColumn < columnRowSize - 1; eachColumn++) {
 
                 // checks the current spot for the piece then checks each spot over
                 while (ticTacToeBoard[eachRow][eachColumn].equals(piece + " ")) {
@@ -79,16 +82,18 @@ public class GameLogic {
     }
 
     // check for consecutive vertical win
-    public boolean checkVertical (String[][] ticTacToeBoard, char piece, int columnRowSize, int conditionToWin) {
+    public boolean checkVertical(String[][] ticTacToeBoard, char piece, int columnRowSize, int conditionToWin) {
         boolean isAWin = false;
         int counter = 0;
 
         // iterates through each column of the board starting at column 1
         for (int eachColumn = 1; eachColumn < columnRowSize + 1; eachColumn++) {
-            // columnRowSize is = (playerCount + 1) then add another 1 so that it accounts for the entire # of rows
+            // columnRowSize is = (playerCount + 1) then add another 1 so that it accounts
+            // for the entire # of rows
 
-            // iterate through row until conditionToWin away from the end so that it does not check over in the while loop
-            for (int eachRow = 1; eachRow < columnRowSize - 1; eachRow++ ) {
+            // iterate through row until conditionToWin away from the end so that it does
+            // not check over in the while loop
+            for (int eachRow = 1; eachRow < columnRowSize - 1; eachRow++) {
 
                 // checks the current spot for the piece then checks each spot over
                 while (ticTacToeBoard[eachRow][eachColumn].equals(piece + " ")) {
@@ -109,7 +114,7 @@ public class GameLogic {
     }
 
     // method to check for consecutive right falling diagonal win
-    public boolean checkFrontDiagonal (String[][] ticTacToeBoard, char piece, int columnRowSize, int conditionToWin) {
+    public boolean checkFrontDiagonal(String[][] ticTacToeBoard, char piece, int columnRowSize, int conditionToWin) {
         boolean isAWin = false;
         int counter = 0;
 
@@ -118,14 +123,15 @@ public class GameLogic {
             // columnRowSize is = (playerCount + 1) then subtract 2 from condition
             // so that it accounts for the entire # of rows
 
-            // iterate through row until conditionToWin away from the end so that it does not check over in the while loop
+            // iterate through row until conditionToWin away from the end so that it does
+            // not check over in the while loop
             for (int eachRow = 1; eachRow < columnRowSize - (conditionToWin - 2); eachRow++) {
 
                 // checks the current spot for the piece then checks each spot over
                 while (ticTacToeBoard[eachRow][eachColumn].equals(piece + " ")) {
-                        eachRow++;
-                        eachColumn++;
-                        counter++;
+                    eachRow++;
+                    eachColumn++;
+                    counter++;
 
                     // if a win -> announce a winner
                     if (counter == conditionToWin) {
@@ -140,16 +146,16 @@ public class GameLogic {
         return isAWin;
     }
 
-
     // method to check for consecutive left falling diagonal win
-    public boolean checkBackwardDiagonal (String[][] ticTacToeBoard, char piece, int columnRowSize, int conditionToWin) {
+    public boolean checkBackwardDiagonal(String[][] ticTacToeBoard, char piece, int columnRowSize, int conditionToWin) {
         boolean isAWin = false;
         int counter = 0;
 
         // iterates through each column of the board starting at last column
         for (int eachColumn = columnRowSize; eachColumn > 1 + (conditionToWin - 2); eachColumn--) {
 
-            // iterate through row until conditionToWin away from the end so that it does not check over in the while loop
+            // iterate through row until conditionToWin away from the end so that it does
+            // not check over in the while loop
             for (int eachRow = 1; eachRow < columnRowSize - (conditionToWin - 2); eachRow++) {
 
                 // checks the current spot for the piece then checks each spot over
