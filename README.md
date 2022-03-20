@@ -1,5 +1,5 @@
 # TicTacToe2.0 
 
-First public project involving a dynamic tic tac toe game. 
+Here's my first public project involving a console-based dynamic tic tac toe game. 
 
-Built with OOP. Have a go at it. Thanks! (: 
+Have a go at it!
