@@ -7,4 +7,8 @@ Have a go at it!
 Steps to play:
 
 1) Download ZIP
-2) Run TicTacToe.java 
+
+2) Run 
+~~~
+TicTacToe.java 
+~~~
