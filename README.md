@@ -14,6 +14,6 @@ Steps to play:
 TicTacToe.java
 ```
 
-#### `Demo`
+### `Demo`
 
 ![](https://i.imgur.com/HgqYd0W.gif)
